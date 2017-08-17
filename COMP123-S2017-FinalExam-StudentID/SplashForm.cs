@@ -9,32 +9,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * Name:
- * Date:
- * StudentID:
- * Description:
- * Version:
+ * Name:Linlin Fan
+ * Date:August 17, 2017
+ * StudentID:300923300
+ * Description:The SplashForm class of Pick Highest Card Application.
+ * Version:0.1 
  */
-
 namespace COMP123_S2017_FinalExam_StudentID
 {
     public partial class SplashForm : Form
     {
+        // PUBLIC PROPERTIES
+        public PickHighestCardForm PickHighestCardForm
+        {
+
+            get
+            {
+                return Program.pickHighestCardForm;
+            }
+
+        }
         public SplashForm()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// This is the SplashFormTimer's "Tick" event handler method
+        /// This is an event handler.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SplashFormTimer_Tick(object sender, EventArgs e)
+        private void SplashTimer_Tick(object sender, EventArgs e)
         {
-            SplashFormTimer.Enabled = false;
+            this.PickHighestCardForm.Show();
+
             this.Hide();
-            Program.pickHighestCardForm.Show();
+
+            SplashTimer.Enabled = false; // turn timer off
         }
     }
 }
